@@ -39,16 +39,15 @@ namespace AddressBookProblem
         }
         public void DisplayContact()
         {
-            Console.WriteLine($"{this.firstName}");
-            Console.WriteLine($"{this.lastName}");
-            Console.WriteLine($"{this.address}");
-            Console.WriteLine($"{this.state}");
-            Console.WriteLine($"{this.city}");
-            Console.WriteLine($"{this.emailId}");
-            Console.WriteLine($"{this.zipCode}");
-            Console.WriteLine($"{this.phoneNumber}");
+            Console.WriteLine($"FirstName => {this.firstName}");
+            Console.WriteLine($"LastName => {this.lastName}");
+            Console.WriteLine($"Address => {this.address}");
+            Console.WriteLine($"State => {this.state}");
+            Console.WriteLine($"City => {this.city}");
+            Console.WriteLine($"EmailId => {this.emailId}");
+            Console.WriteLine($"ZipCode => {this.zipCode}");
+            Console.WriteLine($"PhoneNumber => {this.phoneNumber}");
             
-
         }
     }
 }

@@ -8,9 +8,11 @@ namespace AddressBookProblem
 	public class AddressBook
 	{
 		List<Contact> savedContacts;
-		public AddressBook()
+		public string nameOfAddressBook;
+		public AddressBook(string name)
 		{
 			this.savedContacts = new List<Contact>();
+			this.nameOfAddressBook = name;
 		}
 		public void AddContact(Contact newContact)
 		{
@@ -47,13 +49,10 @@ namespace AddressBookProblem
                     Console.WriteLine("Edit Successful!");
                     return;
 				}
-				else
-				{
-					Console.WriteLine("No Such Contact Present");
-					return;
-				}
+				
 			}
-		}
+           
+        }
 		public void RemoveContact(string fname)
 		{
 			if(this.savedContacts.Count == 0)
@@ -73,7 +72,7 @@ namespace AddressBookProblem
 					}
 				}
 
-				Console.WriteLine("Contact Doesnot Exist");
+				//Console.WriteLine("Contact Doesnot Exist");
 			}
 		}
 		public void DisplayAddressBook()
