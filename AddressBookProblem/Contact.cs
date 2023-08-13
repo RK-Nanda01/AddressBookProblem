@@ -23,6 +23,20 @@ namespace AddressBookProblem
             this.zipCode = zipCode;
             this.phoneNumber = phoneNumber;
         }
+
+        public void DisplayContact()
+        {
+            Console.WriteLine($"{this.firstName}");
+            Console.WriteLine($"{this.lastName}");
+            Console.WriteLine($"{this.address}");
+            Console.WriteLine($"{this.state}");
+            Console.WriteLine($"{this.city}");
+            Console.WriteLine($"{this.emailId}");
+            Console.WriteLine($"{this.zipCode}");
+            Console.WriteLine($"{this.phoneNumber}");
+            
+
+        }
     }
 }
 
