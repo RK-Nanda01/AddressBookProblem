@@ -13,6 +13,7 @@ class Program
             Console.WriteLine("1.Create Contact and Add to the AddressBook");
             Console.WriteLine("2.Display AddressBook");
             Console.WriteLine("3.Edit Details");
+            Console.WriteLine("4.Remove Contact");
             Console.WriteLine("0.Exit");
             option = Convert.ToInt32(Console.ReadLine());
             switch(option)
@@ -61,6 +62,14 @@ class Program
                         addressBook.FindContactAndEdit(fName);
                         break;
 
+                    }
+                case 4:
+                    {
+                        string fName;
+                        Console.WriteLine("Enter Name to Delete Details");
+                        fName = Console.ReadLine();
+                        addressBook.RemoveContact(fName);
+                        break;
                     }
 
             }

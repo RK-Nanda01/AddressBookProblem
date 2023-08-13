@@ -10,7 +10,7 @@ namespace AddressBookProblem
 		List<Contact> savedContacts;
 		public AddressBook()
 		{
-			savedContacts = new List<Contact>();
+			this.savedContacts = new List<Contact>();
 		}
 		public void AddContact(Contact newContact)
 		{
@@ -18,7 +18,11 @@ namespace AddressBookProblem
 		}
 		public void FindContactAndEdit(string fname)
 		{
-			foreach(Contact c in savedContacts)
+			if(this.savedContacts.Count == 0)
+			{
+				Console.WriteLine("Address Book Empty");
+			}
+			foreach(Contact c in this.savedContacts)
 			{
 				if(c.GetFirstName() == fname)
 				{
@@ -40,7 +44,8 @@ namespace AddressBookProblem
                     Console.WriteLine("Enter Phone Number");
                     phoneNumber = Convert.ToInt64(Console.ReadLine());
 					c.EditContactDetails(lastName, address, state, city, email, zipCode, phoneNumber);
-					return;
+                    Console.WriteLine("Edit Successful!");
+                    return;
 				}
 				else
 				{
@@ -49,13 +54,35 @@ namespace AddressBookProblem
 				}
 			}
 		}
+		public void RemoveContact(string fname)
+		{
+			if(this.savedContacts.Count == 0)
+			{
+				Console.WriteLine("Address Book Already Empty");
+				return;
+			}
+			else
+			{
+				foreach(Contact c in this.savedContacts)
+				{
+					if(c.GetFirstName() == fname)
+					{
+						this.savedContacts.Remove(c);
+                        Console.WriteLine("Contact Removed!");
+                        return;
+					}
+				}
+
+				Console.WriteLine("Contact Doesnot Exist");
+			}
+		}
 		public void DisplayAddressBook()
 		{
-			if(savedContacts.Count == 0)
+			if(this.savedContacts.Count == 0)
 			{
 				Console.WriteLine("No saved Contacts");
 			}
-			foreach(Contact contact in savedContacts)
+			foreach(Contact contact in this.savedContacts)
 			{
 				contact.DisplayContact();
 			}
