@@ -10,6 +10,7 @@ class Program
         while(flag)
         {
             Console.WriteLine("Menu->");
+            // Select Option1 to create multiple contacts and save to the address book
             Console.WriteLine("1.Create Contact and Add to the AddressBook");
             Console.WriteLine("2.Display AddressBook");
             Console.WriteLine("3.Edit Details");
