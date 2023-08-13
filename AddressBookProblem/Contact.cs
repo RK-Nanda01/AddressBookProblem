@@ -23,7 +23,20 @@ namespace AddressBookProblem
             this.zipCode = zipCode;
             this.phoneNumber = phoneNumber;
         }
-
+        public string GetFirstName()
+        {
+            return this.firstName;
+        }
+        public void EditContactDetails(string lastName, string address, string state, string city, string email, int zipCode, long phoneNumber)
+        {
+            this.lastName = lastName;
+            this.address = address;
+            this.state = state;
+            this.city = city;
+            this.emailId = email;
+            this.zipCode = zipCode;
+            this.phoneNumber = phoneNumber;
+        }
         public void DisplayContact()
         {
             Console.WriteLine($"{this.firstName}");
