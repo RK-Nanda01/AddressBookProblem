@@ -20,6 +20,8 @@ class Program
             Console.WriteLine("4.Display A Particular AddressBook");
             Console.WriteLine("5.Find Contact and Edit Details");
             Console.WriteLine("6.Remove Contact");
+            Console.WriteLine("7.Search for a person in a city");
+            Console.WriteLine("8.Search for a person in a state");
             Console.WriteLine("0.Exit");
             option = Convert.ToInt32(Console.ReadLine());
             switch (option)
@@ -102,6 +104,52 @@ class Program
                         Console.WriteLine("Enter Name of contact to delete");
                         fname = Console.ReadLine();
                         ac.RemoveContact(fname);
+                        break;
+                    }
+                case 7:
+                    {
+                        string nameOfCity;
+                        List<Contact> personInCity = new List<Contact>(); 
+                        Console.WriteLine("Enter Name of city");
+                        nameOfCity = Console.ReadLine();
+                        personInCity = ac.GetPersonInACity(nameOfCity);
+                        if(personInCity.Count == 0)
+                        {
+                            Console.WriteLine($"No person living in the city {nameOfCity}");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Name of person in the city {nameOfCity} are:->");
+                            foreach (Contact c in personInCity)
+                            {
+                                Console.Write($"{c.GetFirstName()} ");
+                            }
+                            Console.Write("\n");
+                        }
+                       
+                        break;
+                    }
+                case 8:
+                    {
+                        string nameOfState;
+                        List<Contact> personInState = new List<Contact>();
+                        Console.WriteLine("Enter Name of State");
+                        nameOfState = Console.ReadLine();
+                        personInState = ac.GetPersonInAState(nameOfState);
+                        if (personInState.Count == 0)
+                        {
+                            Console.WriteLine($"No person living in the state {nameOfState}");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Name of person in the state {nameOfState} are:->");
+                            foreach (Contact c in personInState)
+                            {
+                                Console.Write($"{c.GetFirstName()} ");
+                            }
+                            Console.Write("\n");
+                        }
+
                         break;
                     }
 

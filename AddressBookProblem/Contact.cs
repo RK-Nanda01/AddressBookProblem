@@ -27,6 +27,14 @@ namespace AddressBookProblem
         {
             return this.firstName;
         }
+        public string GetCityName()
+        {
+            return this.city;
+        }
+        public string GetStateName()
+        {
+            return this.state;
+        }
         public void EditContactDetails(string lastName, string address, string state, string city, string email, int zipCode, long phoneNumber)
         {
             this.lastName = lastName;

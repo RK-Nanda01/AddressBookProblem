@@ -7,7 +7,7 @@ namespace AddressBookProblem
 {
 	public class AddressBook
 	{
-		List<Contact> savedContacts;
+		public List<Contact> savedContacts;
 		public string nameOfAddressBook;
 		public AddressBook(string name)
 		{

@@ -122,6 +122,16 @@ namespace AddressBookProblem
 				}
 			}
 		}
-	}
+
+        public List<Contact> GetPersonInACity(string cityName)
+        {
+            List<Contact> listOfPersonInCity = new List<Contact>();
+            
+			listOfPersonInCity	= setOfAddressBook.SelectMany(pair => pair.Value.savedContacts)
+								  .Where(c => c.GetCityName() == cityName)
+								  .ToList();
+            return listOfPersonInCity;
+        }
+    }
 }
 
