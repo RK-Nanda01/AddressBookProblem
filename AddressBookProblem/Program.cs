@@ -22,6 +22,8 @@ class Program
             Console.WriteLine("6.Remove Contact");
             Console.WriteLine("7.Search for a person in a city");
             Console.WriteLine("8.Search for a person in a state");
+            Console.WriteLine("9.Get Count of person in a city");
+            Console.WriteLine("10.Get Count of person in a state");
             Console.WriteLine("0.Exit");
             option = Convert.ToInt32(Console.ReadLine());
             switch (option)
@@ -150,6 +152,28 @@ class Program
                             Console.Write("\n");
                         }
 
+                        break;
+                    }
+                case 9:
+                    {
+                        string nameOfCity;
+                        List<Contact> personInCity = new List<Contact>();
+                        Console.WriteLine("Enter Name of city");
+                        nameOfCity = Console.ReadLine();
+                        personInCity = ac.GetPersonInACity(nameOfCity);
+                       
+                        Console.WriteLine($"Number of person living in the city {nameOfCity} is {personInCity.Count}");
+
+                        break;
+                    }
+                case 10:
+                    {
+                        string nameOfState;
+                        List<Contact> personInState = new List<Contact>();
+                        Console.WriteLine("Enter Name of State");
+                        nameOfState = Console.ReadLine();
+                        personInState = ac.GetPersonInAState(nameOfState);
+                        Console.WriteLine($"No person living in the state {nameOfState} is {personInState.Count}");
                         break;
                     }
 
