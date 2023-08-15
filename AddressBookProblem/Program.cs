@@ -66,7 +66,6 @@ class Program
                             phoneNumber = Convert.ToInt64(Console.ReadLine());
                             Contact newContact = new Contact(firstName, lastName, address, state, city, email, zipCode, phoneNumber);
                             ac.FindAddressBookAndEdit(nameOfBook, newContact);
-                            Console.WriteLine("New Contact Successfully Added");
                         }
                         else
                         {

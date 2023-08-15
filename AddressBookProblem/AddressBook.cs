@@ -16,7 +16,18 @@ namespace AddressBookProblem
 		}
 		public void AddContact(Contact newContact)
 		{
-			this.savedContacts.Add(newContact);
+			string newName = newContact.GetFirstName();
+			bool ifAlreadyExist = this.savedContacts.Any(c => c.GetFirstName() == newName);
+
+			if(ifAlreadyExist)
+			{
+				Console.WriteLine("The contact with this name already Exists");
+				return;
+			}
+
+            this.savedContacts.Add(newContact);
+            Console.WriteLine("The contact was added successfully");
+            return;
 		}
 		public void FindContactAndEdit(string fname)
 		{
