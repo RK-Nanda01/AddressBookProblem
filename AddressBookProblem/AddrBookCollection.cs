@@ -132,7 +132,15 @@ namespace AddressBookProblem
 								  .ToList();
             return listOfPersonInCity;
         }
-        
+        public List<Contact> GetPersonInAState(string stateName)
+        {
+            List<Contact> listOfPersonInState = new List<Contact>();
+
+            listOfPersonInState = setOfAddressBook.SelectMany(pair => pair.Value.savedContacts)
+                                  .Where(c => c.GetStateName() == stateName)
+                                  .ToList();
+            return listOfPersonInState;
+        }
     }
 }
 
