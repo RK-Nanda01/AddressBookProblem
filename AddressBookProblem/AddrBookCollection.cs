@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
+using CsvHelper;
+
 namespace AddressBookProblem
 {
 	public class AddrBookCollection
@@ -207,6 +210,21 @@ namespace AddressBookProblem
                 Console.WriteLine("File Path DoesNot Exist");
             }
         }
-    }
+		public void ReadAndSaveContactCSVHelper(string nameOfBook, string path)
+		{
+            using (var reader = new StreamReader(path))
+            using (var csvReader = new CsvReader(reader, CultureInfo.InvariantCulture))
+            {
+				var newContact = csvReader.GetRecords<Contact>().ToList();
+				foreach(Contact c in newContact)
+				{
+					this.setOfAddressBook[nameOfBook].AddContact(c);
+					
+				}
+			}
+
+		}
+
+	}
 }
 

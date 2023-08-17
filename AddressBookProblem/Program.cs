@@ -29,6 +29,8 @@ class Program
             Console.WriteLine("14.Sort the entries of addressbook wrt ZipCode");
             Console.WriteLine("15.Write contacts to a File");
             Console.WriteLine("16.Read contacts from a File and save");
+            Console.WriteLine("17.Read Contact From a csv file and save to Addressbook");
+            Console.WriteLine("18.Write Contact of an AddressBook to a csv file");
             Console.WriteLine("0.Exit");
             option = Convert.ToInt32(Console.ReadLine());
             switch (option)
@@ -271,7 +273,7 @@ class Program
                     {
                         string nameOfAddBook;
                         string readFilePath = "/Users/rk/Documents/ASP.NET/AddressBookProblem/readFile.txt";
-                        Console.WriteLine("Enter Name of AddressBook you want to write in a file");
+                        Console.WriteLine("Enter Name of AddressBook you want to save contact to.");
                         nameOfAddBook = Console.ReadLine();
                         if (ac.IfExists(nameOfAddBook))
                         {
@@ -285,7 +287,25 @@ class Program
 
                         break;
                     }
+                case 17:
+                    {
+                        string nameOfAddBook;
+                        string readFilePath = "/Users/rk/Documents/ASP.NET/AddressBookProblem/readFile.csv";
+                        Console.WriteLine("Enter Name of AddressBook you want to save the contact");
+                        nameOfAddBook = Console.ReadLine();
+                        if (ac.IfExists(nameOfAddBook))
+                        {
+                            ac.ReadAndSaveContactCSVHelper(nameOfAddBook, readFilePath);
 
+                        }
+                        else
+                        {
+                            Console.WriteLine("The Address Book DoesNot Exists");
+                        }
+
+                        break;
+                    }
+               
             }
         }
 
