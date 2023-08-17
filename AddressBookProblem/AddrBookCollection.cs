@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 namespace AddressBookProblem
 {
 	public class AddrBookCollection
@@ -159,6 +161,51 @@ namespace AddressBookProblem
         {
 
             this.setOfAddressBook[nameOfAddBook].savedContacts = this.setOfAddressBook[nameOfAddBook].savedContacts.OrderBy(contact => contact.GetZipCode()).ToList();
+        }
+
+		public void WriteToAFile(string nameOfBook, string path)
+		{
+            List < Contact > contactToWrite = this.setOfAddressBook[nameOfBook].savedContacts;
+			if(File.Exists(path))
+			{
+                using (StreamWriter writer = new StreamWriter(path))
+                {
+                    foreach (var contact in contactToWrite)
+                    {
+                        writer.WriteLine(contact.GetFirstName() + "," + contact.GetCityName() + "," + contact.GetStateName() + "," + contact.GetZipCode());
+                    }
+                }
+				Console.WriteLine("Contact Written to the file");
+			}
+			else
+			{
+                Console.WriteLine("File Path DoesNot Exist");
+            }
+		}
+        public void ReadAndSaveContact(string nameOfBook, string path)
+        {
+			
+            List<Contact> contactToWrite = this.setOfAddressBook[nameOfBook].savedContacts;
+            if (File.Exists(path))
+            {
+				string[] contactDetails = File.ReadAllLines(path);
+				string firstName = contactDetails[0];
+                string lastName = contactDetails[1];
+				string address = contactDetails[2];
+                string state = contactDetails[3];
+                string city = contactDetails[4];
+                string emailId = contactDetails[5];
+                int zipCode = Convert.ToInt32(contactDetails[6]);
+                long phoneNumber = Convert.ToInt64(contactDetails[7]);
+				Contact newContact = new Contact(firstName, lastName, address, state, city, emailId, zipCode, phoneNumber);
+				this.setOfAddressBook[nameOfBook].AddContact(newContact);
+                Console.WriteLine("Added Contact from file to address book");
+
+            }
+            else
+            {
+                Console.WriteLine("File Path DoesNot Exist");
+            }
         }
     }
 }

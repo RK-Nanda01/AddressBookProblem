@@ -27,6 +27,8 @@ class Program
             Console.WriteLine("12.Sort the entries of addressbook wrt State");
             Console.WriteLine("13.Sort the entries of addressbook wrt City");
             Console.WriteLine("14.Sort the entries of addressbook wrt ZipCode");
+            Console.WriteLine("15.Write contacts to a File");
+            Console.WriteLine("16.Read contacts from a File and save");
             Console.WriteLine("0.Exit");
             option = Convert.ToInt32(Console.ReadLine());
             switch (option)
@@ -238,6 +240,42 @@ class Program
                         if (ac.IfExists(nameOfAddBook))
                         {
                             ac.SortAddressBookWithZipCode(nameOfAddBook);
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("The Address Book DoesNot Exists");
+                        }
+
+                        break;
+                    }
+                case 15:
+                    {
+                        string nameOfAddBook;
+                        string writeFilePath = "/Users/rk/Documents/ASP.NET/AddressBookProblem/writeFile.txt";
+                        Console.WriteLine("Enter Name of AddressBook you want to write in a file");
+                        nameOfAddBook = Console.ReadLine();
+                        if (ac.IfExists(nameOfAddBook))
+                        {
+                            ac.WriteToAFile(nameOfAddBook,writeFilePath);
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("The Address Book DoesNot Exists");
+                        }
+
+                        break;
+                    }
+                case 16:
+                    {
+                        string nameOfAddBook;
+                        string readFilePath = "/Users/rk/Documents/ASP.NET/AddressBookProblem/readFile.txt";
+                        Console.WriteLine("Enter Name of AddressBook you want to write in a file");
+                        nameOfAddBook = Console.ReadLine();
+                        if (ac.IfExists(nameOfAddBook))
+                        {
+                            ac.ReadAndSaveContact(nameOfAddBook, readFilePath);
 
                         }
                         else
