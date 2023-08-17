@@ -83,7 +83,6 @@ namespace AddressBookProblem
 					}
 				}
 
-				//Console.WriteLine("Contact Doesnot Exist");
 			}
 		}
 		public void DisplayAddressBook()
@@ -94,7 +93,8 @@ namespace AddressBookProblem
 			}
 			foreach(Contact contact in this.savedContacts)
 			{
-				contact.DisplayContact();
+				
+				Console.WriteLine(contact);
 			}
 		}
 	}

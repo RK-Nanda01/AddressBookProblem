@@ -45,17 +45,16 @@ namespace AddressBookProblem
             this.zipCode = zipCode;
             this.phoneNumber = phoneNumber;
         }
-        public void DisplayContact()
+        public override string ToString()
         {
-            Console.WriteLine($"FirstName => {this.firstName}");
-            Console.WriteLine($"LastName => {this.lastName}");
-            Console.WriteLine($"Address => {this.address}");
-            Console.WriteLine($"State => {this.state}");
-            Console.WriteLine($"City => {this.city}");
-            Console.WriteLine($"EmailId => {this.emailId}");
-            Console.WriteLine($"ZipCode => {this.zipCode}");
-            Console.WriteLine($"PhoneNumber => {this.phoneNumber}");
-            
+            return $"First Name: {this.firstName} \n" + 
+                   $"LastName => {this.lastName} \n" +
+                   $"Address => {this.address}\n" +
+                   $"State => {this.state} \n" +
+                   $"City => {this.city} \n" +
+                   $"EmailId => {this.emailId} \n" +
+                   $"ZipCode => {this.zipCode} \n" +
+                   $"PhoneNumber => {this.phoneNumber} \n";
         }
     }
 }

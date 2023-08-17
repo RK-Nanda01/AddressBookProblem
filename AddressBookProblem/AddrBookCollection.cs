@@ -141,6 +141,11 @@ namespace AddressBookProblem
                                   .ToList();
             return listOfPersonInState;
         }
+		public void SortAddressBookWithName(string nameOfAddBook)
+		{
+            
+            this.setOfAddressBook[nameOfAddBook].savedContacts = this.setOfAddressBook[nameOfAddBook].savedContacts.OrderBy(contact => contact.GetFirstName()).ToList();
+        }
     }
 }
 

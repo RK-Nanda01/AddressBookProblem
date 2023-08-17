@@ -7,7 +7,6 @@ class Program
     {
         Console.WriteLine("Welcome to Address Book Program");
         AddrBookCollection ac = new AddrBookCollection();
-        //AddressBook addressBook = new AddressBook();
         bool flag = true;
         int option;
         while (flag)
@@ -24,6 +23,7 @@ class Program
             Console.WriteLine("8.Search for a person in a state");
             Console.WriteLine("9.Get Count of person in a city");
             Console.WriteLine("10.Get Count of person in a state");
+            Console.WriteLine("11.Sort the entries of addressbook wrt Name");
             Console.WriteLine("0.Exit");
             option = Convert.ToInt32(Console.ReadLine());
             switch (option)
@@ -174,6 +174,23 @@ class Program
                         nameOfState = Console.ReadLine();
                         personInState = ac.GetPersonInAState(nameOfState);
                         Console.WriteLine($"No person living in the state {nameOfState} is {personInState.Count}");
+                        break;
+                    }
+                case 11:
+                    {
+                        string nameOfAddBook;
+                        Console.WriteLine("Enter Name of AddressBook");
+                        nameOfAddBook = Console.ReadLine();
+                        if(ac.IfExists(nameOfAddBook))
+                        {
+                            ac.SortAddressBookWithName(nameOfAddBook);
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("The Address Book DoesNot Exists");
+                        }
+
                         break;
                     }
 
