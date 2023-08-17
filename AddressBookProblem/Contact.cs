@@ -35,6 +35,10 @@ namespace AddressBookProblem
         {
             return this.state;
         }
+        public int GetZipCode()
+        {
+            return this.zipCode;
+        }
         public void EditContactDetails(string lastName, string address, string state, string city, string email, int zipCode, long phoneNumber)
         {
             this.lastName = lastName;

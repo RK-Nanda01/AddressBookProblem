@@ -24,6 +24,9 @@ class Program
             Console.WriteLine("9.Get Count of person in a city");
             Console.WriteLine("10.Get Count of person in a state");
             Console.WriteLine("11.Sort the entries of addressbook wrt Name");
+            Console.WriteLine("12.Sort the entries of addressbook wrt State");
+            Console.WriteLine("13.Sort the entries of addressbook wrt City");
+            Console.WriteLine("14.Sort the entries of addressbook wrt ZipCode");
             Console.WriteLine("0.Exit");
             option = Convert.ToInt32(Console.ReadLine());
             switch (option)
@@ -184,6 +187,57 @@ class Program
                         if(ac.IfExists(nameOfAddBook))
                         {
                             ac.SortAddressBookWithName(nameOfAddBook);
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("The Address Book DoesNot Exists");
+                        }
+
+                        break;
+                    }
+                case 12:
+                    {
+                        string nameOfAddBook;
+                        Console.WriteLine("Enter Name of AddressBook");
+                        nameOfAddBook = Console.ReadLine();
+                        if (ac.IfExists(nameOfAddBook))
+                        {
+                            ac.SortAddressBookWithState(nameOfAddBook);
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("The Address Book DoesNot Exists");
+                        }
+
+                        break;
+                    }
+                case 13:
+                    {
+                        string nameOfAddBook;
+                        Console.WriteLine("Enter Name of AddressBook");
+                        nameOfAddBook = Console.ReadLine();
+                        if (ac.IfExists(nameOfAddBook))
+                        {
+                            ac.SortAddressBookWithCity(nameOfAddBook);
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("The Address Book DoesNot Exists");
+                        }
+
+                        break;
+                    }
+                case 14:
+                    {
+                        string nameOfAddBook;
+                        Console.WriteLine("Enter Name of AddressBook");
+                        nameOfAddBook = Console.ReadLine();
+                        if (ac.IfExists(nameOfAddBook))
+                        {
+                            ac.SortAddressBookWithZipCode(nameOfAddBook);
 
                         }
                         else

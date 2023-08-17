@@ -143,8 +143,22 @@ namespace AddressBookProblem
         }
 		public void SortAddressBookWithName(string nameOfAddBook)
 		{
-            
             this.setOfAddressBook[nameOfAddBook].savedContacts = this.setOfAddressBook[nameOfAddBook].savedContacts.OrderBy(contact => contact.GetFirstName()).ToList();
+        }
+        public void SortAddressBookWithState(string nameOfAddBook)
+        {
+
+            this.setOfAddressBook[nameOfAddBook].savedContacts = this.setOfAddressBook[nameOfAddBook].savedContacts.OrderBy(contact => contact.GetStateName()).ToList();
+        }
+        public void SortAddressBookWithCity(string nameOfAddBook)
+        {
+
+            this.setOfAddressBook[nameOfAddBook].savedContacts = this.setOfAddressBook[nameOfAddBook].savedContacts.OrderBy(contact => contact.GetCityName()).ToList();
+        }
+        public void SortAddressBookWithZipCode(string nameOfAddBook)
+        {
+
+            this.setOfAddressBook[nameOfAddBook].savedContacts = this.setOfAddressBook[nameOfAddBook].savedContacts.OrderBy(contact => contact.GetZipCode()).ToList();
         }
     }
 }
