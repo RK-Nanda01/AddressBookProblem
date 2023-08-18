@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Net.NetworkInformation;
 using CsvHelper;
+using CsvHelper.Configuration;
+using Newtonsoft.Json;
 
 namespace AddressBookProblem
 {
@@ -224,7 +227,53 @@ namespace AddressBookProblem
 			}
 
 		}
+       
+        public void WriteToJSONFile(string nameOfBook, string path)
+		{
+			try
+			{
+                List<Contact> contactToWrite = this.setOfAddressBook[nameOfBook].savedContacts;
 
-	}
+                using (var writer = new StreamWriter(path))
+                {
+					foreach (Contact c in contactToWrite)
+					{
+						
+                        string json = JsonConvert.SerializeObject(c, Formatting.Indented);
+                        writer.WriteLine(json);
+					}
+				}
+            }
+			catch(Exception ex)
+			{
+				Console.WriteLine(ex.Message);
+			}
+
+
+        }
+        public void ReadFromJSONFile(string nameOfBook, string path)
+        {
+            try
+            {
+                string json = File.ReadAllText(path);
+                List<Contact> contactsToSave = JsonConvert.DeserializeObject<List<Contact>>(json);
+       
+                foreach (Contact c in contactsToSave)
+                {
+
+				   this.setOfAddressBook[nameOfBook].AddContact(c);
+				   
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+
+        }
+
+    }
 }
 

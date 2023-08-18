@@ -1,0 +1,23 @@
+[
+  {
+    "firstName": "Shivam",
+    "lastName": "Chauhan",
+    "address": "Amritapuri",
+    "state": "Tamil Nadu",
+    "city": "Chennai",
+    "zipCode": 998786,
+    "phoneNumber": 4453767859,
+    "emailId": "shivam@gmail.com"
+  },
+  {
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "address": "123 Main St",
+    "state": "California",
+    "city": "Los Angeles",
+    "zipCode": 12345,
+    "phoneNumber": 9876543210,
+    "emailId": "alice@example.com"
+  }
+]
+

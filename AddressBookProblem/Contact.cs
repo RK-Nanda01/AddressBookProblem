@@ -3,14 +3,14 @@ namespace AddressBookProblem
 {
 	public class Contact
 	{
-        private string firstName;
-        private string lastName;
-        private string address;
-        private string state;
-        private string city;
-        private int zipCode;
-        private long phoneNumber;
-        private string emailId;
+        public string firstName;
+        public string lastName;
+        public string address;
+        public string state;
+        public string city;
+        public int zipCode;
+        public long phoneNumber;
+        public string emailId;
 
         public Contact(string firstName, string lastName, string address, string state, string city, string email, int zipCode, long phoneNumber)
         {

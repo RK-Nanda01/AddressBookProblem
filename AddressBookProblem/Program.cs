@@ -31,6 +31,8 @@ class Program
             Console.WriteLine("16.Read contacts from a File and save");
             Console.WriteLine("17.Read Contact From a csv file and save to Addressbook");
             Console.WriteLine("18.Write Contact of an AddressBook to a csv file");
+            Console.WriteLine("19.Write Contact of an AddressBook to a JSON file");
+            Console.WriteLine("20.Read Contact from a JSON file");
             Console.WriteLine("0.Exit");
             option = Convert.ToInt32(Console.ReadLine());
             switch (option)
@@ -291,7 +293,7 @@ class Program
                     {
                         string nameOfAddBook;
                         string readFilePath = "/Users/rk/Documents/ASP.NET/AddressBookProblem/readFile.csv";
-                        Console.WriteLine("Enter Name of AddressBook you want to save the contact");
+                        Console.WriteLine("Enter Name of AddressBook you want to save the contact in");
                         nameOfAddBook = Console.ReadLine();
                         if (ac.IfExists(nameOfAddBook))
                         {
@@ -305,7 +307,43 @@ class Program
 
                         break;
                     }
-               
+                case 19:
+                    {
+                        string nameOfAddBook;
+                        string writeFilePath = "/Users/rk/Documents/ASP.NET/AddressBookProblem/writeFile.json";
+                        Console.WriteLine("Enter Name of AddressBook you want to write on JSON file");
+                        nameOfAddBook = Console.ReadLine();
+                        if (ac.IfExists(nameOfAddBook))
+                        {
+                            ac.WriteToJSONFile(nameOfAddBook, writeFilePath);
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("The Address Book DoesNot Exists");
+                        }
+
+                        break;
+                    }
+                case 20:
+                    {
+                        string nameOfAddBook;
+                        string readFilePath = "/Users/rk/Documents/ASP.NET/AddressBookProblem/readFile.json";
+                        Console.WriteLine("Enter Name of AddressBook you want to save the contact from JSON File");
+                        nameOfAddBook = Console.ReadLine();
+                        if (ac.IfExists(nameOfAddBook))
+                        {
+                            ac.ReadFromJSONFile(nameOfAddBook, readFilePath);
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("The Address Book DoesNot Exists");
+                        }
+
+                        break;
+                    }
+
             }
         }
 

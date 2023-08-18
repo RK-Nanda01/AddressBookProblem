@@ -1,0 +1,20 @@
+{
+  "firstName": "Ashish",
+  "lastName": "Singh",
+  "address": "RPS More",
+  "state": "Bihar",
+  "city": "Patna",
+  "zipCode": 801503,
+  "phoneNumber": 8897675610,
+  "emailId": "ashish123@gmail.com"
+}
+{
+  "firstName": "Rupam",
+  "lastName": "Goswami",
+  "address": "Salt Lake",
+  "state": "West Bengal",
+  "city": "Kolkata",
+  "zipCode": 998786,
+  "phoneNumber": 4453767859,
+  "emailId": "rupam@gmail.com"
+}
